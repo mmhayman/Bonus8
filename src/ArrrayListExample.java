@@ -20,8 +20,11 @@ public class ArrrayListExample {
 
             String userInput = " ";
 
+            // array list
 
             ArrayList<Movies> movieList = new ArrayList<Movies>();
+
+            // array list with movie titles and category
 
             movieList.add(new Movies("The Boss Baby", "Animated"));
             movieList.add(new Movies("Cars 3", "Animated"));
@@ -35,10 +38,11 @@ public class ArrrayListExample {
             movieList.add(new Movies("Logan", "Scifi"));
 
 
-            System.out.println("What category are you interested in? (animated, horror, drama, or scifi)");
+            System.out.print("What category are you interested in? (animated, horror, drama, or scifi)");
             userInput = scan.nextLine();
             userInput.toLowerCase();
 
+            // if user writes any of these category names - it will list the movies in that category
             if (userInput.equalsIgnoreCase("animated")) {
                 System.out.println(movieList.get(0));
                 System.out.println(movieList.get(1));
@@ -61,7 +65,7 @@ public class ArrrayListExample {
                 System.out.println(movieList.get(9));
             }
 
-
+            System.out.println();
             System.out.println("Do you want to continue? (y/n)");
             choice = scan.nextLine();
             choice.toLowerCase();
