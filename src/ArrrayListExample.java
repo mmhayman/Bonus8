@@ -20,20 +20,27 @@ public class ArrrayListExample {
 
             String userInput = " ";
 
-
-
-            System.out.print("What category are you interested in? (animated, horror, drama, or scifi)");
+            System.out.println("What category are you interested in? (animated, horror, drama, scifi)");
             userInput = scan.nextLine();
             userInput.toLowerCase();
+
+            while (!userInput.equalsIgnoreCase("animated") && (!userInput.equalsIgnoreCase("drama") && (!userInput.equalsIgnoreCase("horror") && (!userInput.equalsIgnoreCase("scifi"))))) {
+
+                System.out.println("Invalid entry, please try again (animated, horror, drama, scifi)");
+                userInput= scan.nextLine();
+
+            }
 
             Movies moviesList = new Movies(userInput);
 
             // loop to get movies
-            for (Movies m: moviesList.listofMovies()
-                 ) {
-            if (userInput.equalsIgnoreCase(m.getCategory())) {
-                System.out.println(m);
-            }
+            for (Movies m : moviesList.listofMovies()
+                    ) {
+                if (userInput.equalsIgnoreCase(m.getCategory())) {
+                    System.out.println(m);
+                }
+
+
             }
 
             System.out.println();
@@ -43,9 +50,12 @@ public class ArrrayListExample {
 
 
         }
+
         System.out.println("Goodbye!");
+
 
     }
 
-
 }
+
+
